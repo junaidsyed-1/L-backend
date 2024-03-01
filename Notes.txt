@@ -1,0 +1,9 @@
+# What is NodeJS?
+- NodeJs is a JavaScript runtime environment. Is is commmonly used for creating server-side applications, web APIs, real-time applications.
+    -In NodeJS, modules are libraries that contains pre-defined functions, objects and properties that provide specific functionalities.
+
+# Why do we need NodeJS?
+- We need nodejs to create server-side applications using JavaScript, plus it has a vast ecosystem of many npm, which means there are many packages and libraries that help to build the server-side application much easier.
+
+# What is ExpressJS?
+- ExpressJs is a web framework for NodeJS, It provides many features out of the box which helps to make the backend much easier, it provides routing, middleware, template engine, error handling, static file serving and much more.
