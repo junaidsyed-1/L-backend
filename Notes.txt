@@ -7,3 +7,12 @@
 
 # What is ExpressJS?
 - ExpressJs is a web framework for NodeJS, It provides many features out of the box which helps to make the backend much easier, it provides routing, middleware, template engine, error handling, static file serving and much more.
+
+# What is Routing?
+- Routing is a process which invloves how an application responds to requests when a client makes to a particular url.
+
+# What is a middleware?
+- Middleware is a function that has access to req,res and next middleware function in the application's request-response cycle. Middleware functions can perform various tasks such as, modifying request and response object, terminating the request-response cycle, calling the next middleware function in the stack, or handling errors. And they are executed in order they are defined, they are used in functionalities like authentication, logging, error handling, and more.
+
+# What are template engines?
+- Template engines are tools which enables to use dynamic generation of HTML markup by combining static template files with dynamic data.
