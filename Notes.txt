@@ -17,4 +17,7 @@
 # What are template engines?
 - Template engines are tools which enables to use dynamic generation of HTML markup by combining static template files with dynamic data.
 
-Express-Generator, Static files, Model, schema, collection, document
+Express-Generator, Static files, Model, schema, collection, document.
+Cookie, session.
+
+--For session we need to install a package express-session.
