@@ -21,3 +21,6 @@ Express-Generator, Static files, Model, schema, collection, document.
 Cookie, session.
 
 --For session we need to install a package express-session.
+  -- How to create a session : req.session.anyName = "any value" ;
+  -- How to read the session : req.session.name;
+  -- How to delete the session : req.session.destroy();
