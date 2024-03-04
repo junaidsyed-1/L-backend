@@ -7,22 +7,22 @@ router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-// How to set a cookie
-router.get('/cookie', function (req, res) {
-  res.cookie("Name", "Junad");
-  res.send("Cookie has been set!");
+router.get('/create', async function (req, res) {
+  const user = await userModel.create({
+    username: "Junaid syed",
+    desription: 'He is a software engineer and he is very good at it and he is also a very religious person.',
+    categories: ['Namaz', 'Quran', 'Respect parents', 'Be good for no reason', 'react', 'node js', 'javascript', 'tailwind', 'express']
+
+  });
+  res.send('User has been created with username as ' + user.username + ', You can check on /check');
 });
 
-// How to read cookie
-router.get('/read', function (req, res) {
-  if (req.cookies.Name) res.send(req.cookies)
-  else res.send("No cookies found")
-});
-
-// How to delete a cookie
-router.get('/delete', function (req, res) {
-  res.clearCookie("Name");
-  res.send("Cookie cleared");
+router.get('/check', async function (req, res) {
+  const regex = new RegExp('^junaid$', 'i')
+  const user = await userModel.find({ username: regex });
+  if (user) {
+    res.send(user);
+  } else { res.send('User not found') };
 });
 
 module.exports = router;
