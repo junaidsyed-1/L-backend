@@ -5,8 +5,10 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const flash = require('connect-flash');
+const passport = require('passport');
 
 var app = express();
 
@@ -18,7 +20,14 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   secret: "ThisIsPractice"
-}))
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+passport.serializeUser(usersRouter.serializeUser());
+passport.deserializeUser(usersRouter.deserializeUser());
+
+app.use(flash());
 
 app.use(logger('dev'));
 app.use(express.json());
