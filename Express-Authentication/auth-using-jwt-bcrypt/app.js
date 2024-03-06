@@ -3,6 +3,7 @@ const connectToMongoDb = require('./config/database');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const auth = require('./middleware/auth');
 const app = express();
 const port = 3000;
 
@@ -11,7 +12,7 @@ connectToMongoDb();
 app.use(express.json())
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/users', auth, usersRouter);
 
 app.listen(port, () => {
     console.log('listening on port' + port);

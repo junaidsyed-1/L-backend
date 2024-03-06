@@ -5,11 +5,7 @@ const bcrypt = require('bcrypt');
 const SECRET_KEY = 'Thisismysecretkey';
 
 const signup = async (req, res) => {
-    // Sign in Logic
-    // check if a user already exists
-    // Hashed password
-    // User create
-    // Token generate
+
     const { email, name, password } = req.body;
 
     try {
@@ -46,7 +42,6 @@ const signin = async (req, res) => {
 
         const token = jwt.sign({ email: existingUser.email, id: existingUser._id }, SECRET_KEY);
         res.status(200).json({ token: token, message: 'Sig in successfull', user: existingUser });
-
 
     } catch (error) {
         console.log(error);
